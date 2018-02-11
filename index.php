@@ -6,13 +6,13 @@
 	//$page_obj = new class_page_cache();
 	
 	
-	$access_obj_process = new class_access_process();
-	$access_obj_process->get_settings()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);	
+	$access_obj_process = new \dc\stoeckl\process();
+	$access_obj_process->get_config()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);	
 	$access_obj_process->process_control();
 	
 	//Get and verify log in status.
-	$access_obj = new class_access_status();
-	$access_obj->get_settings()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);	
+	$access_obj = new \dc\stoeckl\status();
+	$access_obj->get_config()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);	
 	$access_obj->verify();
 	
 	// Set up navigaiton.
@@ -112,7 +112,7 @@
                             </div>
                             
                             <br>
-                            <button type="submit" name="access_action" value="<?php echo ACCESS_ACTION::LOGIN; ?>" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+                            <button type="submit" name="access_action" value="<?php echo \dc\stoeckl\ACTION::LOGIN; ?>" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Login</button>
                         </form>
             
                 <?php

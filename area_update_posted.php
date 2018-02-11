@@ -29,8 +29,8 @@
 	$url_query->set_data('id', $obj_navigation_rec->get_id());
 		
 	// User access.
-	$access_obj = new class_access_status();
-	$access_obj->get_settings()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);
+	$access_obj = new \dc\stoeckl\status();
+	$access_obj->get_config()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);
 	$access_obj->set_redirect($url_query->return_url());
 	
 	$access_obj->verify();	

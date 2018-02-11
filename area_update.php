@@ -29,8 +29,8 @@
 	$url_query->set_data('id', $obj_navigation_rec->get_id());
 		
 	// User access.
-	$access_obj = new class_access_status();
-	$access_obj->get_settings()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);
+	$access_obj = new \dc\stoeckl\status();
+	$access_obj->get_config()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);
 	$access_obj->set_redirect($url_query->return_url());
 	
 	$access_obj->verify();	
@@ -140,14 +140,16 @@
 			
 			// Let's get account info fromt he active directory system. We'll need to put
 			// names int our own database so we can control ordering of output.
-			$account_lookup = new class_access_lookup();
-			$account_lookup->lookup($access_obj->get_account());
+			// $account_lookup = new \dc\stoeckl\lookup();
+			// $account_lookup->lookup($access_obj->get_account());
+			
+			
 			
 			// Set up and send email alert.
 				$address  = 'dvcask2@uky.edu';
 													
 				$subject = MAILING::SUBJECT;
-				$body = 'An update has been posted to Mendeleev by '.$account_lookup->get_account_data()->get_name_l().', '.$account_lookup->get_account_data()->get_name_f().'. <a href="http://ehs.uky.edu/apps/mendeleev/area_update_list.php">Click here</a> to view details.';
+				$body = 'An update has been posted to Mendeleev by '.$_SESSION[\dc\stoeckl\SES_KEY::NAME_L].', '.$_SESSION[\dc\stoeckl\SES_KEY::NAME_L].'. <a href="http://ehs.uky.edu/apps/mendeleev/area_update_list.php">Click here</a> to view details.';
 						
 				$headers   = array();
 				$headers[] = "MIME-Version: 1.0";

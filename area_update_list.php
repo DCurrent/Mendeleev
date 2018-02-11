@@ -6,15 +6,15 @@
 	$url_query	= new url_query;
 		
 	// User access.
-	$access_obj = new class_access_status();
-	$access_obj->get_settings()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);
+	$access_obj = new \dc\stoeckl\status();
+	$access_obj->get_config()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);
 	$access_obj->set_redirect($url_query->return_url());
 	
 	$access_obj->verify();	
 	$access_obj->action();
 	
 	// Looking up account names.
-	$account_lookup = new class_access_lookup();
+	$account_lookup = new \dc\stoeckl\lookup();
 	
 	// Start page cache.
 	$page_obj = new class_page_cache();
@@ -142,14 +142,14 @@
 											 break;
 									}
 									
-									$account_lookup->lookup($_obj_data_main->get_account());
-									$account_name = $account_lookup->get_account_data()->get_name_l().', '.$account_lookup->get_account_data()->get_name_f();
+									//$account_lookup->lookup($_obj_data_main->get_account());
+									//$account_name = $account_lookup->get_account_data()->get_name_l().', '.$account_lookup->get_account_data()->get_name_f();
 									
                             ?>
                                         <tr>
                                             <td><?php if(is_object($_obj_data_main->get_log_update()) === TRUE) echo date(APPLICATION_SETTINGS::TIME_FORMAT, $_obj_data_main->get_log_update()->getTimestamp()); ?></td>
                                             <td><?php echo $update_text; ?></td>
-                                            <td><a href="mailto:<?php echo $_obj_data_main->get_account(); ?>@uky.edu"><?php echo $account_name; ?></a></td>
+                                            <td><a href="mailto:<?php echo $_obj_data_main->get_account(); ?>@uky.edu"><?php echo $_obj_data_main->get_account(); ?></a></td>
                                             <td><?php echo $_obj_data_main->get_pi_name_l().', '. $_obj_data_main->get_pi_name_f(); ?></td>
                                             <td><?php echo $_obj_data_main->get_department(); ?></td>
                                             <td><?php echo $_obj_data_main->get_areas(); ?></td>
