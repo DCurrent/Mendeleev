@@ -9,4 +9,13 @@
 <file name="main.php" server="ar08.uky.edu//ehs/" local="131628463503513988" remote="131279796000000000" Dst="1" />
 <file name="navigation.php" server="ar08.uky.edu//ehs/" local="131628463511421350" remote="131386968000000000" Dst="1" />
 <file name="settings.php" server="ar08.uky.edu//ehs/" local="131628463514989243" remote="131315220000000000" Dst="1" />
+<file name="data_account.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485859738454" remote="131628309600000000" Dst="1" />
+<file name="data_area.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485859878851" remote="131628309600000000" Dst="1" />
+<file name="data_common.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485859949037" remote="131628309600000000" Dst="1" />
+<file name="data_log.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485860059307" remote="131628309600000000" Dst="1" />
+<file name="data_main.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485860139599" remote="131628309600000000" Dst="1" />
+<file name="data_role.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485860239779" remote="131628309600000000" Dst="1" />
+<file name="main.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485860510586" remote="131628309600000000" Dst="1" />
+<file name="navigation.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485860580789" remote="131628309600000000" Dst="1" />
+<file name="settings.php" server="arftp.ad.uky.edu//ehs/apps/mendeleev/" local="131628485860861444" remote="131628309600000000" Dst="1" />
 </dwsync>
